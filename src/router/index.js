@@ -19,7 +19,7 @@ import household from '../view/Household/household.vue'
 import communicate from '../view/Find/communicate.vue'
 import inspiration from '../view/Find/inspiration.vue'
 import joint from '../view/Find/joint.vue'
-//发现页面->设计师页面
+//发现页面--设计师页面
 import designer from '../view/Find/designer.vue'
 Vue.use(Router)
 
