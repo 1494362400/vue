@@ -108,10 +108,18 @@
       <div class="swiperContainer">
         <div class="swiperBox">
           <swiper :swiperSrc="swiperSrc" class="swiperImg"></swiper>
-          <slot name="textBox" class="swiperText" />
+              <div 
+                slot="textBox"
+                class="swiperText"
+                v-for="(slotItem,idx) in swiperSrc"
+                :key="idx"
+              >
+                {{slotItem.text}}
+                <div class="slotImg"></div>
+                <div class="slotMoreBox"></div>
+            </div>
         </div>
       </div>
-
       <div class="selectShop">
         <ul>
           <li>
@@ -196,6 +204,37 @@ export default {
 </script>
 
 <style scoped lang="less">
+.slotImg {
+  width: 0.2rem;
+  height: 0.2rem;
+  position: absolute;
+  background: url(../../assets/hot.png) no-repeat;
+  background-size: cover;
+  top: 0.06rem;
+  right: 0.97rem;
+}
+.slotMoreBox {
+  width: 0.12rem;
+  height: 0.12rem;
+  position: absolute;
+  background: url(../../assets/whiteRightMore.png) no-repeat;
+  background-size: cover;
+  top: 0.1rem;
+  right: 0.1rem;
+}
+.swiperText {
+  width: 3.51rem;
+  height: 0.32rem;
+  background: url(../../assets/swiperTextBg.png) no-repeat;
+  background-size: cover;
+  z-index: 100;
+  font-size: 0.12rem;
+  line-height: 0.32rem;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.7;
+}
+
 .topHead {
   position: relative;
   height: 0.86rem;

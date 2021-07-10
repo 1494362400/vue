@@ -6,16 +6,7 @@
         <img :src="item.img" alt="" />
       </swiper-slide>
     </swiper>
-    <div
-      slot="textBox"
-      class="swiperText"
-      v-for="(item, idx) in swiperSrc"
-      :key="idx"
-    >
-      {{ item.text }}
-      <div class="img"></div>
-      <div class="moreBox"></div>
-    </div>
+    <slot name="textBox"></slot>
   </div>
 </template>
 
@@ -26,7 +17,7 @@ export default {
   name: "swiper-example-default",
   title: "Default",
   props: {
-    swiperSrc: Array
+    swiperSrc: Array,
   },
   components: {
     Swiper,
@@ -35,34 +26,4 @@ export default {
 };
 </script>
 <style scoped>
-.img {
-  width: 0.2rem;
-  height: 0.2rem;
-  position: absolute;
-  background: url(../assets/hot.png) no-repeat;
-  background-size: cover;
-  top: 0.06rem;
-  right: 0.97rem;
-}
-.moreBox {
-  width: 0.12rem;
-  height: 0.12rem;
-  position: absolute;
-  background: url(../assets/whiteRightMore.png) no-repeat;
-  background-size: cover;
-  top: 0.1rem;
-  right: 0.1rem;
-}
-.swiperText {
-  width: 3.51rem;
-  height: 0.32rem;
-  background: url(../assets/swiperTextBg.png) no-repeat;
-  background-size: cover;
-  z-index: 100;
-  font-size: 0.12rem;
-  line-height: 0.32rem;
-  position: absolute;
-  bottom: 0;
-  opacity: 0.7;
-}
 </style>
